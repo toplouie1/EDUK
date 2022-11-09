@@ -32,18 +32,19 @@ if (process.env.PG_HOST !== "production") {
 // 		credentials: true,
 // 	})
 // );
+
 app.use(cors());
 
 // Parse incoming JSON
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+// app.use(express.urlencoded({ extended: false }));
 
 // session middleware
 app.use(
 	session({
 		secret: process.env.SECRET,
 		resave: false,
-		saveUninitialized: false,
+		saveUninitialized: true,
 		// cookie: {
 		// 	httpOnly: true,
 		// 	sameSite: "none",
