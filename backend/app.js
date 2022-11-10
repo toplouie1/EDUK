@@ -24,14 +24,14 @@ if (process.env.PG_HOST !== "production") {
 	require("dotenv").config();
 }
 
-// app.options("*", cors()); // i
+app.options("*", cors()); // i
 // MIDDLEWARE.
-// app.use(
-// 	cors({
-// 		origin: process.env.ORIGIN,
-// 		credentials: true,
-// 	})
-// );
+app.use(
+	cors({
+		origin: process.env.ORIGIN,
+		credentials: true,
+	})
+);
 
 app.use(cors());
 
@@ -45,12 +45,12 @@ app.use(
 		secret: process.env.SECRET,
 		resave: false,
 		saveUninitialized: true,
-		// cookie: {
-		// 	httpOnly: true,
-		// 	sameSite: "none",
-		// 	secure: true,
-		// 	maxAge: 1000 * 60 * 60 * 24,
-		// },
+		cookie: {
+			// httpOnly: true,
+			// sameSite: "none",
+			// secure: true,
+			// maxAge: 1000 * 60 * 60 * 24,
+		},
 	})
 );
 
