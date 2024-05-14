@@ -11,7 +11,7 @@ const {
 	updateMentor,
 	deleteMentor,
 } = require("../queries/mentors.js");
-const { isIDValid } = require("./helper.js");
+const { isIdValid } = require("./helper.js");
 
 // Get all mentors
 mentors.get("/", async (req, res) => {
@@ -29,7 +29,7 @@ mentors.get("/", async (req, res) => {
 mentors.get("/:mid", async (req, res) => {
 	try {
 		const { mid } = req.params;
-		if (!isIDValid(mid)) {
+		if (!isIdValid(mid)) {
 			return res.status(404).json({ error: "the id is not valid" });
 		}
 		const mentor = await getOneMentor(mid);
@@ -72,7 +72,7 @@ mentors.post("/:mentor_id/upload", upload.single("photo"), async (req, res) => {
 	}
 
 	try {
-		if (!isIDValid(mid)) {
+		if (!isIdValid(mid)) {
 			return res.status(404).json({ error: "the id is not valid" });
 		}
 		if (updatedMentor.mentor_id)
@@ -90,7 +90,7 @@ mentors.put("/:mid", async (req, res) => {
 	const { mid } = req.params;
 	const updatedMentor = await updateMentor(mid, mentor);
 	try {
-		if (!isIDValid(mid)) {
+		if (!isIdValid(mid)) {
 			return res.status(404).json({ error: "the id is not valid" });
 		}
 		if (updatedMentor.mentor_id) {
@@ -108,7 +108,7 @@ mentors.delete("/:mid", async (req, res) => {
 	const { mid } = req.params;
 	const deletedMentor = await deleteMentor(mid);
 	try {
-		if (!isIDValid(mid)) {
+		if (!isIdValid(mid)) {
 			return res.status(404).json({ error: "the id is not valid" });
 		}
 		if (deletedMentor.mentor_id) {
