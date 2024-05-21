@@ -1,25 +1,26 @@
 import React from "react";
 import "./ResourceCategory.css";
-
-import axios from "axios";
 import { useState, useEffect } from "react";
-
 import SingleResource from "./SingleResource";
 
 const API = process.env.REACT_APP_API_URL;
 
 export default function College() {
 	const [college, setCollege] = useState([]);
-
 	useEffect(() => {
-		axios
-			.get(API + "/resources")
-			.then((response) => {
-				setCollege(response.data.result);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
+		const fetchResources = async () => {
+			try {
+				const response = await fetch(`${API}/resources`);
+				if (!response.ok) {
+					throw new Error("network response failed");
+				}
+				const data = await response.json();
+				setCollege(data.result);
+			} catch (error) {
+				console.error("error fetching resources:", error);
+			}
+		};
+		fetchResources();
 	}, []);
 
 	let collegeProgram = college.filter((high) => {
