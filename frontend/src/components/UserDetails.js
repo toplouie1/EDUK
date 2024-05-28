@@ -36,33 +36,31 @@ function UserDetails() {
 			})
 			.catch((e) => console.log(e));
 	};
-	// if (userId === uid) {
-	// 	useEffect(() => {
-	// 		axios
-	// 			//, { withCredentials: true }
-	// 			.get(API + "/users/" + uid)
-	// 			.then((response) => {
-	// 				setUser(response.data.result);
-	// 			})
-	// 			.catch((error) => {
-	// 				console.log(error);
-	// 			});
+	if (userId !== uid) {
+		window.location.replace("https://edukapp.netlify.app/");
+	}
+	useEffect(() => {
+		axios
+			//, { withCredentials: true }
+			.get(API + "/users/" + uid)
+			.then((response) => {
+				setUser(response.data.result);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 
-	// 		axios
-	// 			//, { withCredentials: true }
-	// 			.get(API + "/users/" + uid + "/resources")
-	// 			.then((response) => {
-	// 				setUserResources(response.data.result);
-	// 			})
-	// 			.catch((error) => {
-	// 				console.log(error);
-	// 			});
-	// 	}, [uid]);
-	// } else {
-	// 	window.location.replace("https://edukapp.netlify.app/");
-	// }
+		axios
+			//, { withCredentials: true }
+			.get(API + "/users/" + uid + "/resources")
+			.then((response) => {
+				setUserResources(response.data.result);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, [uid]);
 
-	//message
 	const handleClose = (event, reason) => {
 		if (reason === "clickaway") {
 			return;
