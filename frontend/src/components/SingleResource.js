@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
-import { motion, useAnimation } from "framer-motion/dist/framer-motion";
+// import { motion, useAnimation } from "framer-motion/dist/framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
@@ -20,37 +20,37 @@ const boxVariant = {
 };
 
 function SingleResource({ resource }) {
-	const control = useAnimation();
-	const [ref, inView] = useInView();
+	// const control = useAnimation();
+	// const [ref, inView] = useInView();
 
-	useEffect(() => {
-		if (inView) {
-			control.start("visible");
-		} else {
-			control.start("hidden");
-		}
-	}, [control, inView]);
+	// useEffect(() => {
+	// 	if (inView) {
+	// 		control.start("visible");
+	// 	} else {
+	// 		control.start("hidden");
+	// 	}
+	// }, [control, inView]);
 
 	return (
-		<motion.div
-			ref={ref}
-			variants={boxVariant}
-			initial="hidden"
-			animate={control}
-			className="resource-card"
-		>
-			<Card style={cardStyle} variant="outlined">
-				<Link to={`/resources/${resource.resource_id}`}>
-					<h4> {resource.resource_name} </h4>
-				</Link>
-				<p> {resource.description} </p>
-				<Link to={`/resources/${resource.resource_id}`}>
-					<Button variant="text" size="small">
-						View
-					</Button>
-				</Link>
-			</Card>
-		</motion.div>
+		// <motion.div
+		// 	ref={ref}
+		// 	variants={boxVariant}
+		// 	initial="hidden"
+		// 	animate={control}
+		// 	className="resource-card"
+		// >
+		<Card style={cardStyle} variant="outlined">
+			<Link to={`/resources/${resource.resource_id}`}>
+				<h4> {resource.resource_name} </h4>
+			</Link>
+			<p> {resource.description} </p>
+			<Link to={`/resources/${resource.resource_id}`}>
+				<Button variant="text" size="small">
+					View
+				</Button>
+			</Link>
+		</Card>
+		// </motion.div>
 	);
 }
 

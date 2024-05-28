@@ -2,6 +2,6 @@ const isIdValid = (id) => {
 	return Number.isInteger(Number(id));
 };
 
-modelue.exports = {
+module.exports = {
 	isIdValid,
 };

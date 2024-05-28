@@ -52,6 +52,13 @@ app.use(
 			// maxAge: 1000 * 60 * 60 * 24,
 		},
 	})
+
+	// app.use(session({
+	// 	secret: process.env.SESSION_SECRET, // Use the secret from the environment variable
+	// 	resave: false,
+	// 	saveUninitialized: true,
+	// 	cookie: { secure: false } // Set to true if using HTTPS
+	//   }));
 );
 
 // app.use((req, res, next) => {
