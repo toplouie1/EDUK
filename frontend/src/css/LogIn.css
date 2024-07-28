@@ -79,8 +79,6 @@
 	font-size: 15px;
 }
 
-/* screen bigger than a mac  */
-
 @media (min-width: 1550px) {
 	.login-form input {
 		width: 500px;

@@ -47,9 +47,6 @@ p {
 	font-family: "Roboto", sans-serif;
 }
 
------------------------------- HOME --------------------------------------
-/* HERO PAGE */
-
 .Hero-text {
 	z-index: 9;
 }
@@ -60,7 +57,6 @@ p {
 	text-align: center;
 	padding-top: 100px;
 	font-weight: 300;
-	/* position: relative; */
 	z-index: 2;
 }
 
@@ -76,18 +72,9 @@ p {
 	margin-bottom: 110px;
 	background-color: #cccccc;
 	background-size: cover;
-	/* background: #222b2f; fallback for old browsers */
-	background: #000000; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#434343,
-		#000000
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#434343,
-		#000000
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: #000000;
+	background: -webkit-linear-gradient(to right, #434343, #000000);
+	background: linear-gradient(to right, #434343, #000000);
 }
 
 .Hero-text h1 {
@@ -105,8 +92,6 @@ p {
 .joinus div {
 	margin: 30px;
 }
-
-/* Making button lettes spread out on hover*/
 
 .joinUs button {
 	text-transform: uppercase;
