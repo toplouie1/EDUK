@@ -19,9 +19,9 @@ npm install
 Backend:
 npm install
 
-Heroku (backend) :
+Render (backend) :
 
-- https://nns-eduk-data.herokuapp.com/
+- https://eduk.onrender.com/
 
 Netlify (frontend) :
 
