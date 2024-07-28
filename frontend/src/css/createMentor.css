@@ -71,7 +71,7 @@
 		margin: auto;
 		padding: auto;
 	}
-	*/ .create-mentor-form textarea {
+	.create-mentor-form textarea {
 		width: 250px;
 	}
 }

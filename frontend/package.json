@@ -57,7 +57,9 @@
 	"devDependencies": {
 		"@babel/plugin-proposal-private-property-in-object": "^7.21.11",
 		"@craco/craco": "^7.1.0",
-		"css-minimizer-webpack-plugin": "^7.0.0"
+		"css-minimizer-webpack-plugin": "^7.0.0",
+		"stylelint": "^16.7.0",
+		"stylelint-config-standard": "^36.0.1"
 	},
 	"engines": {
 		"node": ">=18.0.0"
