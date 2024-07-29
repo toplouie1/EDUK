@@ -15,6 +15,18 @@
 	}
 }
 
+/* Keyframes for fading in */
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		visibility: hidden;
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
 .resourcesBody {
 	display: flex;
 	justify-content: center;
@@ -25,6 +37,10 @@
 	margin: 0;
 	overflow: hidden;
 	animation: backgroundColorChange 2s ease-in-out 1s forwards; /* Apply gradient after 1 second */
+	opacity: 0; /* Initial opacity for fade-in effect */
+	visibility: hidden; /* Initial visibility for fade-in effect */
+	animation: fadeIn 2s ease-in-out 1s forwards,
+		backgroundColorChange 2s ease-in-out 1s forwards; /* Apply animations */
 }
 
 .containerResource {
@@ -55,17 +71,6 @@
 	font-size: 2em;
 	margin: 15px 0;
 }
-
-/* @keyframes slideIn {
-	from {
-		transform: translateY(-50%);
-		opacity: 0;
-	}
-	to {
-		transform: translateY(0);
-		opacity: 1;
-	}
-} */
 
 @keyframes fadeText {
 	from {
