@@ -30,11 +30,9 @@
 .containerResource {
 	text-align: center;
 	padding: 30px;
-	border: 3px solid #ff6666; /* Red border for warning */
 	border-radius: 15px;
 	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 	background: rgba(255, 255, 255, 0.9);
-	animation: slideIn 1s ease-out;
 	width: 90%;
 	max-width: 600px; /* Larger max-width for larger screens */
 }
@@ -58,7 +56,7 @@
 	margin: 15px 0;
 }
 
-@keyframes slideIn {
+/* @keyframes slideIn {
 	from {
 		transform: translateY(-50%);
 		opacity: 0;
@@ -67,7 +65,7 @@
 		transform: translateY(0);
 		opacity: 1;
 	}
-}
+} */
 
 @keyframes fadeText {
 	from {
