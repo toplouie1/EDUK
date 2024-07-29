@@ -15,12 +15,9 @@ function LogInUser({ setLogText, mentors }) {
 		user_name: "",
 		password: "",
 	});
-	//show error to user
-	const [error, setError] = useState("");
 	const [open, setOpen] = useState(false);
 
 	const logIn = () => {
-		setError("");
 		axios
 			// , { withCredentials: true }
 			.post(`${API}/auth/login`, user)
@@ -28,7 +25,6 @@ function LogInUser({ setLogText, mentors }) {
 				const userInfo = res.data.result;
 				const userId = userInfo.uid;
 				if (!isNaN(userId)) {
-					setError("");
 					//set userId in localStorage
 					localStorage.setItem("userId", `${userId}`);
 					//set userInfo in localStage
@@ -46,7 +42,6 @@ function LogInUser({ setLogText, mentors }) {
 			})
 			.catch((c) => {
 				if (c.response && c.response.data) {
-					setError(c.response.data.error);
 					setOpen(true);
 				}
 			});
@@ -69,11 +64,24 @@ function LogInUser({ setLogText, mentors }) {
 		setOpen(false);
 	};
 
+	const messages = [
+		"Uh-oh! Did you forget your password or did it just go on vacation? 😅🔑",
+		"Looks like something went awry! Maybe your password is taking a nap? 💤🔐",
+		"Whoopsie! Either your password is playing hide and seek or it's on a coffee break. ☕🕵️",
+		"Yikes! Your login just had a tiny hiccup. Give it another shot, superhero! 🦸‍♂️💥",
+	];
+
+	// Function to get a random message
+	const getRandomMessage = () => {
+		const randomIndex = Math.floor(Math.random() * messages.length);
+		return messages[randomIndex];
+	};
+
 	return (
 		<div className="user-login-form">
 			<GeneralShowMessage
 				severity="error"
-				message={error}
+				message={getRandomMessage()}
 				open={open}
 				anchorOrigin={{
 					vertical: "top",
